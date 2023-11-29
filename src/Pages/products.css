@@ -1,0 +1,23 @@
+.row-1 {
+  margin-bottom: 30px;
+}
+
+.addToCart {
+  outline: none;
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+}
+.addToCart:hover {
+  background-color: rgb(218, 3, 3);
+  border: 2px solid rgb(218, 3, 3);
+}
+@media screen and (max-width: 577px) {
+  .box img {
+    height: 150px;
+    width: 150px;
+  }
+}

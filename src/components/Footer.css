@@ -1,0 +1,32 @@
+.footer {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 190px;
+}
+.foot-col {
+  padding: 10px;
+  text-align: start;
+}
+.footer p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.902);
+}
+.footer p:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+.social-icon {
+  font-size: 25px;
+  margin-right: 15px;
+}
+.social-icon:hover {
+  color: rgba(255, 255, 255, 0.502);
+}
+@media screen and (max-width: 577px) {
+  .foot-col {
+    text-align: center;
+  }
+}

@@ -1,0 +1,40 @@
+.slider img {
+  height: 600px;
+}
+.slider h1 {
+  color: black;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.335);
+  width: 500px;
+}
+.slider p {
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.335);
+  width: 500px;
+}
+@media screen and (max-width: 577px) {
+  .slider img {
+    height: 500px;
+  }
+  .slider h1 {
+    width: 350px;
+    font-size: 25px;
+  }
+  .slider p {
+    font-size: 15px;
+    width: 350px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .slider img {
+    height: 300px;
+  }
+  .slider h1 {
+    width: 200px;
+    font-size: 22px;
+  }
+  .slider p {
+    font-size: 13px;
+    width: 200px;
+  }
+}

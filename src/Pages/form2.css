@@ -1,0 +1,51 @@
+.div-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form2 {
+  margin-top: 50px;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 450px;
+}
+.form2 h1 {
+  margin-top: 15px;
+}
+.form2 input {
+  width: 75%;
+  border: 1.3px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 40px;
+  padding: 0 10px;
+}
+.form2 button {
+  width: 75%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1.3px solid black;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #fff;
+}
+.form2 button:hover {
+  background-color: black;
+  color: white;
+}
+.form2 span {
+  color: red;
+}
+.form2 .more {
+  margin-bottom: 25px;
+}
+.more .link {
+  margin-left: 10px;
+}
+@media screen and (max-width: 577px) {
+  .form2 {
+    width: 300px;
+  }
+}
