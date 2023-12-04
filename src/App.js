@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignIn from "./Pages/SignIn";
 import Form2 from "./Pages/Form2";
+import ProtectedFile from "./Pages/ProtectedFile";
+import AddToCart from "./Pages/AddToCart";
 
 const App = () => {
   return (
@@ -19,11 +21,15 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<SignIn />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/help" element={<Help />} />{" "}
           <Route path="/SignUp" element={<Form2 />} />
+          <Route path="/home" element={<ProtectedFile Cmp={Home} />} />
+          <Route path="/about" element={<ProtectedFile Cmp={About} />} />
+          <Route path="/products" element={<ProtectedFile Cmp={Products} />} />
+          <Route path="/help" element={<ProtectedFile Cmp={Help} />} />
+          <Route
+            path="/addToCart"
+            element={<ProtectedFile Cmp={AddToCart} />}
+          />
           <Route path="/*" element={<Page404 />} />
         </Routes>
 
