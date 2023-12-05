@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./form2.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // let storedData = JSON.parse(localStorage.getItem("formData") || []);
 let person = {
   name: "",
@@ -11,14 +11,17 @@ let person = {
 const Form2 = () => {
   let [data, setData] = useState(person);
   let [array, setArray] = useState([]);
-
+  let Nav = useNavigate();
   let [userErr, setUserErr] = useState();
   let [passErr, setPassErr] = useState();
   let [emailErr, setEmailErr] = useState();
   let [ageErr, setAgeErr] = useState();
 
   useEffect(() => {
-    localStorage.setItem("formData", JSON.stringify(array));
+    if (array.length > 0) {
+      localStorage.setItem("formData", JSON.stringify(array));
+      Nav("/home");
+    }
   }, [array]);
 
   function handleChange(e) {
@@ -51,7 +54,6 @@ const Form2 = () => {
     if (!userErr && !passErr && !emailErr && !ageErr) {
       if (data.name && data.pass && data.email && data.age) {
         setArray([...array, data]);
-
         setData(person);
       } else {
         alert("Please fill the form before submitting.....");
