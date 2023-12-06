@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./products.css";
-
+import { useDispatch } from "react-redux";
+import { increment } from "../Actions/Action";
 const Products = () => {
-  let [count, setCount] = useState(0);
-  function add() {
-    setCount(count + 1);
-  }
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h1 style={{ marginBottom: "30px" }}>Products</h1>
@@ -28,7 +27,10 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart" onClick={add}>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
                 add to cart
               </button>
             </div>
@@ -50,7 +52,12 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart">add to cart</button>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
+                add to cart
+              </button>
             </div>
           </div>
           <div className="col box">
@@ -70,7 +77,12 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart">add to cart</button>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
+                add to cart
+              </button>
             </div>
           </div>
           <div className="col box">
@@ -90,7 +102,12 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart">add to cart</button>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
+                add to cart
+              </button>
             </div>
           </div>
         </div>
@@ -112,7 +129,12 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart">add to cart</button>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
+                add to cart
+              </button>
             </div>
           </div>
           <div className="col box">
@@ -132,7 +154,12 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart">add to cart</button>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
+                add to cart
+              </button>
             </div>
           </div>
           <div className="col box">
@@ -152,7 +179,12 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart">add to cart</button>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
+                add to cart
+              </button>
             </div>
           </div>
           <div className="col box">
@@ -172,7 +204,12 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button className="addToCart">add to cart</button>
+              <button
+                className="addToCart"
+                onClick={() => dispatch(increment())}
+              >
+                add to cart
+              </button>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isCheckboxChecked, setCheckboxChecked] = useState(true);
@@ -17,6 +18,7 @@ const Navbar = () => {
       Nav("/");
     }
   }
+  const myState = useSelector((s) => s.ChangeTheNumber);
   return (
     <>
       <div className="container-fluid content">
@@ -83,7 +85,8 @@ const Navbar = () => {
 
                 <div className="col-sm-1 x">
                   <NavLink className={"links"} to={"/addToCart"}>
-                    <span className="cart-span">0</span> <BsCart4 size={20} />
+                    <span className="cart-span">{myState}</span>{" "}
+                    <BsCart4 size={20} />
                   </NavLink>
                 </div>
                 <div className="col-sm-4 x">

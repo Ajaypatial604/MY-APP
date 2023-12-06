@@ -59,13 +59,13 @@
 }
 .cart-span {
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: -3px;
   margin-left: 15px;
   background-color: red;
   border-radius: 50%;
-  height: 17px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
 }
 .hamburger {
   position: absolute;
