@@ -14,14 +14,22 @@ import ProtectedFile from "./Pages/ProtectedFile";
 import AddToCart from "./Pages/AddToCart";
 
 const App = () => {
+  const isLoggedIn = !!localStorage.getItem("formData");
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<SignIn />} />
-          <Route path="/SignUp" element={<Form2 />} />
+          <Route
+            path="/"
+            element={isLoggedIn ? <ProtectedFile Cmp={Home} /> : <SignIn />}
+          />
+          <Route
+            path="/SignUp"
+            element={isLoggedIn ? <ProtectedFile Cmp={Home} /> : <Form2 />}
+          />
+
           <Route path="/home" element={<ProtectedFile Cmp={Home} />} />
           <Route path="/about" element={<ProtectedFile Cmp={About} />} />
           <Route path="/products" element={<ProtectedFile Cmp={Products} />} />
