@@ -1,0 +1,33 @@
+.HomeContent {
+  border: 1px solid black;
+  background-image: url(./pic1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner {
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.banner h2 {
+  background-color: #ffffffc2;
+  padding: 5px 15px;
+}
+.banner p {
+  background-color: rgba(255, 0, 0, 0.295);
+  color: white;
+  margin-top: -8px;
+  padding: 5px 15px;
+}
+.HomeContent2 {
+  padding-bottom: 40px;
+}
+.HomeContent2 h3 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.HomeContent2 img {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}

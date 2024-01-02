@@ -18,7 +18,7 @@ const Navbar = () => {
       Nav("/");
     }
   }
-  const myState = useSelector((s) => s.ChangeTheNumber);
+  const cart = useSelector((state) => state.ChangeTheNumber);
   return (
     <>
       <div className="container-fluid content">
@@ -85,7 +85,7 @@ const Navbar = () => {
 
                 <div className="col-sm-1 x">
                   <NavLink className={"links"} to={"/addToCart"}>
-                    <span className="cart-span">{myState}</span>{" "}
+                    <span className="cart-span">{cart.length}</span>
                     <BsCart4 size={20} />
                   </NavLink>
                 </div>

@@ -3,11 +3,7 @@ import "./Slider.css";
 
 function Slider() {
   return (
-    <Carousel
-      data-bs-theme="dark"
-      className="slider"
-      style={{ marginBottom: "20px" }}
-    >
+    <Carousel data-bs-theme="dark" className="slider">
       <Carousel.Item>
         <img
           className="d-block w-100"

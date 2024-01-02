@@ -1,11 +1,12 @@
-const initialState = 0;
-export const ChangeTheNumber = (state = initialState, action) => {
+const initialState = {
+  cart: [],
+};
+export default function ChangeTheNumber(state = [], action) {
   switch (action.type) {
-    case "INCREMENT":
-      return state + 1;
-    case "DECREMENT":
-      return state - 1;
+    case "ADD_TO_CART":
+      // console.log("reducer", action.data);
+      return [...state, { cart: action.data }];
     default:
       return state;
   }
-};
+}

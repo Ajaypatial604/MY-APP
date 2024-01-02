@@ -1,9 +1,14 @@
 import React from "react";
 import "./products.css";
 import { useDispatch } from "react-redux";
-import { increment } from "../Actions/Action";
+import { addToCart } from "../Actions/Action";
+
 const Products = () => {
   const dispatch = useDispatch();
+  function commonFunction() {
+    const object1 = { name: "RealmeC2", Brand: "Realme", Price: 7000 };
+    dispatch(addToCart(object1));
+  }
 
   return (
     <div>
@@ -27,10 +32,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>
@@ -52,10 +54,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>
@@ -77,10 +76,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>
@@ -102,10 +98,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>
@@ -129,10 +122,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>
@@ -154,10 +144,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>
@@ -179,10 +166,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>
@@ -204,10 +188,7 @@ const Products = () => {
                 {" "}
                 Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
               </div>
-              <button
-                className="addToCart"
-                onClick={() => dispatch(increment())}
-              >
+              <button className="addToCart" onClick={commonFunction}>
                 add to cart
               </button>
             </div>

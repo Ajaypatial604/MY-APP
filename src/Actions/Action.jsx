@@ -1,10 +1,7 @@
-export const increment = () => {
+export const addToCart = (data) => {
+  //   console.log("action", data);
   return {
-    type: "INCREMENT",
-  };
-};
-export const decrement = () => {
-  return {
-    type: "DECREMENT",
+    type: "ADD_TO_CART",
+    data: data,
   };
 };
