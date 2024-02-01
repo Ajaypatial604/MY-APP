@@ -1,23 +1,77 @@
-.row-1 {
-  margin-bottom: 30px;
+.main-content {
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-
-.addToCart {
-  outline: none;
-  border: 2px solid red;
-  background-color: red;
-  color: white;
+.card {
+  width: 15rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.card .card-body {
+  height: 106px;
+}
+.card .card-img-top {
+  height: 200px;
+}
+.view-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  position: fixed;
+  z-index: 1;
+}
+.view-data-image {
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-data-image img {
+  width: 90%;
+  /* height: 90%; */
   border-radius: 10px;
-  height: 40px;
-  width: 100px;
 }
-.addToCart:hover {
-  background-color: rgb(218, 3, 3);
-  border: 2px solid rgb(218, 3, 3);
+.view-data-button {
+  position: absolute;
+  right: 11%;
+}
+.xyz {
+  width: 80%;
+  background-color: #e8e8e8;
+  box-shadow: rgba(0, 0, 0, 0.704) 0px 3px 8px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.xyz2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 @media screen and (max-width: 577px) {
-  .box img {
-    height: 150px;
-    width: 150px;
+  .card {
+    width: 13rem;
+  }
+  .view-data-image img {
+    width: 65%;
+  }
+  .view-data {
+    position: absolute;
+    z-index: 1;
+  }
+  .view-data-button {
+    right: 12%;
+  }
+  .xyz2 p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .xyz2 p {
+    font-size: 14px;
   }
 }

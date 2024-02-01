@@ -1,201 +1,95 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./products.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Actions/Action";
+import { RxCross2 } from "react-icons/rx";
 
 const Products = () => {
+  let [API, setAPI] = useState([]);
+  let [detail, setDetail] = useState(false);
+  let [detail2, setDetail2] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/posts")
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        setAPI(data);
+      });
+  }, []);
+  console.log(API[0]);
+
   const dispatch = useDispatch();
+  function productDetail(prod) {
+    setDetail2([{ ...prod }]);
+    setDetail(true);
+  }
   function commonFunction() {
     const object1 = { name: "RealmeC2", Brand: "Realme", Price: 7000 };
     dispatch(addToCart(object1));
   }
 
   return (
-    <div>
-      <h1 style={{ marginBottom: "30px" }}>Products</h1>
-      <div className="container-fluid">
-        <div className="row row-1">
-          <div className="col box">
-            <img
-              src="https://pbx2-pbww-prod-pbww-cdn.getprintbox.com/media/productimage/e925de22-44e0-4276-bb92-0b4101f5f834/Blank%20Jacket_thumb_900x900?mt=1583407059.733"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
+    <>
+      {detail
+        ? detail2.map((prod) => {
+            return (
+              <div className="container-fluid view-data">
+                <div className="row">
+                  <div className="col-12">
+                    <button
+                      className="btn btn-light btn-sm view-data-button"
+                      type="button"
+                      onClick={() => {
+                        setDetail(false);
+                      }}
+                    >
+                      <RxCross2 />
+                    </button>
+                  </div>
+                </div>
+                <div className="row xyz">
+                  <div className="col-sm-5 view-data-image">
+                    <img src={prod.image}></img>
+                  </div>
+                  <div className="col-sm-7 xyz2">
+                    <div>
+                      <h3> DESCRIPTION:</h3>
+                      <p>{prod.description}</p>
+                    </div>
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={commonFunction}
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        : null}
+      <div className="container-fluid main-content">
+        {API.map((i) => (
+          <div className="card">
+            <img className="card-img-top" src={i.image} alt={"Card cap"} />
+            <div className="card-body">
+              <h6 className="card-title"> Name: {i.name}</h6>
+              <h6 className="card-title"> Price: {i.price}/-</h6>
+            </div>
+            <button
+              type="button"
+              className="btn btn-light"
+              onClick={() => {
+                productDetail(i);
               }}
             >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
+              View
+            </button>
           </div>
-          <div className="col box">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkPLX0wLUjgLS3jNWomEUpUx1UckapaBtIbw&usqp=CAU"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
-          </div>
-          <div className="col box">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyNm3o6-2Pd525MRgPjUR1WmXlI7Ch3CQVwg&usqp=CAU"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
-          </div>
-          <div className="col box">
-            <img
-              src="https://handsomedans.co.uk/cdn/shop/products/hd-anarchy-jacket-755268_grande.png?v=1692727403"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col box">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh4KgwNr487ANXdsppkhZu7OOikvadWng9ag&usqp=CAU"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
-          </div>
-          <div className="col box">
-            <img
-              src="https://img3.exportersindia.com/product_images/bc-full/2019/6/4798499/men-jackets-1560933545-4960136.jpeg"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
-          </div>
-          <div className="col box">
-            <img
-              src="https://5.imimg.com/data5/PR/YU/MY-22718484/boys-denim-jackets.jpg"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
-          </div>
-          <div className="col box">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVZijZZbyqPNvuaAqjY7bL5ho1ls2gVMfNMyZEwIWEtUgg0feCCnSU8uNOpBg1bJ15hU&usqp=CAU"
-              height={250}
-              width={250}
-            ></img>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ textAlign: "start" }}>
-                {" "}
-                Name:XYZ <br></br> Price:1500/- <br /> Brand:XXXYY
-              </div>
-              <button className="addToCart" onClick={commonFunction}>
-                add to cart
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+    </>
   );
 };
 
