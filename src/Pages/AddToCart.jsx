@@ -1,11 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./AddToCart.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../Actions/Action";
 
 const AddToCart = () => {
   const cart = useSelector((state) => state.ChangeTheNumber);
-  console.log("AddToCart", cart);
+  const dispatch = useDispatch();
+  // console.log("AddToCart", cart);
+  const handleRemoveFromCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
   return (
     <div className="outer-div">
       {cart.length === 0 ? (
@@ -47,6 +52,7 @@ const AddToCart = () => {
                       <button
                         type="button"
                         className="btn btn-secondary btn-sm"
+                        onClick={() => handleRemoveFromCart(i.cart.id)}
                       >
                         -
                       </button>

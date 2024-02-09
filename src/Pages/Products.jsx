@@ -16,12 +16,15 @@ const Products = () => {
         setAPI(data);
       });
   }, []);
-  console.log(API[0]);
+  // console.log(API[0]);
 
   const dispatch = useDispatch();
   function productDetail(prod) {
     setDetail2([{ ...prod }]);
     setDetail(true);
+  }
+  function commonFunction(prod) {
+    dispatch(addToCart(prod));
   }
 
   return (
@@ -56,7 +59,7 @@ const Products = () => {
                       type="button"
                       className="btn btn-danger"
                       onClick={() => {
-                        dispatch(addToCart(prod));
+                        commonFunction(prod);
                       }}
                     >
                       Add to cart
