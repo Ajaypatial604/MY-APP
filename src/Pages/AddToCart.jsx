@@ -8,7 +8,7 @@ const AddToCart = () => {
   console.log("AddToCart", cart);
   return (
     <div className="outer-div">
-      {cart.length == 0 ? (
+      {cart.length === 0 ? (
         <>
           <h4>There's nothing in cart section.....</h4>
           <br />
@@ -21,15 +21,53 @@ const AddToCart = () => {
         </>
       ) : (
         <>
-          {" "}
-          <h2>Cart</h2>
-          <ul>
-            {cart.map((product, index) => (
-              <li key={index}>
-                {product.name} - {product.Brand} - ${product.Price}
-              </li>
-            ))}
-          </ul>
+          <table className="table" style={{ verticalAlign: "middle" }}>
+            <thead className="thead-light">
+              <tr>
+                <th scope="col">S.n.</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+                <th scope="col">Remove Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((i, index) => {
+                return (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}.</th>
+                    <td>
+                      <img
+                        src={i.cart.image}
+                        className="img-fluid "
+                        style={{ maxHeight: "10rem" }}
+                      />
+                    </td>
+                    <td>Rs. {i.cart.price}/-</td>
+                    <td>
+                      <button
+                        type="button"
+                        className="btn btn-secondary btn-sm"
+                      >
+                        -
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+              <tr>
+                <th scope="col" colSpan={2}>
+                  Total Price:-
+                </th>
+                <th scope="col">
+                  {cart.reduce(
+                    (total, item) => total + parseInt(item.cart.price),
+                    0
+                  )}
+                  /-
+                </th>
+              </tr>
+            </tbody>
+          </table>
         </>
       )}
     </div>

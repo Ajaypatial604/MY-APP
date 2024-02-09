@@ -23,10 +23,6 @@ const Products = () => {
     setDetail2([{ ...prod }]);
     setDetail(true);
   }
-  function commonFunction() {
-    const object1 = { name: "RealmeC2", Brand: "Realme", Price: 7000 };
-    dispatch(addToCart(object1));
-  }
 
   return (
     <>
@@ -59,7 +55,9 @@ const Products = () => {
                     <button
                       type="button"
                       className="btn btn-danger"
-                      onClick={commonFunction}
+                      onClick={() => {
+                        dispatch(addToCart(prod));
+                      }}
                     >
                       Add to cart
                     </button>
