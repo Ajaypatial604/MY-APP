@@ -65,6 +65,7 @@ const AddToCart = () => {
                   Total Price:-
                 </th>
                 <th scope="col">
+                  Rs.
                   {cart.reduce(
                     (total, item) => total + parseInt(item.cart.price),
                     0

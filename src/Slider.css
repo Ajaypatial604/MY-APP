@@ -12,6 +12,7 @@
   background: rgba(255, 255, 255, 0.335);
   width: 500px;
 }
+
 @media screen and (max-width: 577px) {
   .slider img {
     height: 500px;
